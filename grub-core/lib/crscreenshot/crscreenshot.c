@@ -369,10 +369,7 @@ AppleEventKeyHandler (APPLE_EVENT_INFORMATION *Information, VOID *NotifyContext)
         return;
     }
 
-    // Apple calls ALT key by the name of OPTION key
-    if (Information->KeyData->InputKey.scan_code == SCAN_F12 &&
-        Information->Modifiers == (APPLE_MODIFIER_LEFT_CONTROL|
-                                   APPLE_MODIFIER_LEFT_OPTION)) {
+    if (Information->KeyData->InputKey.scan_code == SCAN_F10) {
         // Take a screenshot
         TakeScreenshot (NULL);
     }
@@ -392,11 +389,9 @@ CrScreenshotDxeEntry (VOID)
     APPLE_EVENT_PROTOCOL              *AppleEvent;
     BOOLEAN                           Installed = FALSE;
 
-    // Set keystroke to be LCtrl+LAlt+F12
-    SimpleTextInExKeyStroke.key.scan_code = SCAN_F12;
+    // Set keystroke to be F10
+    SimpleTextInExKeyStroke.key.scan_code = SCAN_F10;
     SimpleTextInExKeyStroke.key.unicode_char = 0;
-    SimpleTextInExKeyStroke.key_state.key_shift_state =
-        EFI_SHIFT_STATE_VALID | EFI_LEFT_CONTROL_PRESSED | EFI_LEFT_ALT_PRESSED;
     SimpleTextInExKeyStroke.key_state.key_toggle_state = 0;
 
     // Locate compatible protocols, firstly try SimpleTextInEx, otherwise use AppleEvent
@@ -455,7 +450,7 @@ CrScreenshotDxeEntry (VOID)
                 continue;
             }
 
-            // Register key handler, which will later determine LCtrl+LAlt+F12 combination
+            // Register key handler, which will later determine F10 combination
             Status = efi_call_4 (AppleEvent->RegisterHandler,
                                  APPLE_EVENT_TYPE_KEY_UP,
                                  AppleEventKeyHandler,
