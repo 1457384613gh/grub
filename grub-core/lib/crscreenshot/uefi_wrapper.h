@@ -92,6 +92,7 @@ typedef grub_efi_key_data_t     EFI_KEY_DATA;
 //
 // EFI Scan codes
 //
+#define SCAN_F10                  0x0014
 #define SCAN_F11                  0x0015
 #define SCAN_F12                  0x0016
 #define SCAN_PAUSE                0x0048
