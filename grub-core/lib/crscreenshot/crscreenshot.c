@@ -392,6 +392,7 @@ CrScreenshotDxeEntry (VOID)
     // Set keystroke to be F10
     SimpleTextInExKeyStroke.key.scan_code = SCAN_F10;
     SimpleTextInExKeyStroke.key.unicode_char = 0;
+    SimpleTextInExKeyStroke.KeyState.KeyShiftState = 0;
     SimpleTextInExKeyStroke.key_state.key_toggle_state = 0;
 
     // Locate compatible protocols, firstly try SimpleTextInEx, otherwise use AppleEvent
