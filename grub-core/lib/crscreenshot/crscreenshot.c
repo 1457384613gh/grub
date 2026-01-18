@@ -256,6 +256,7 @@ TakeScreenshot (EFI_KEY_DATA *KeyData)
 
             // Get current time
             Status = efi_call_2 (r->get_time, &Time, NULL);
+            if (!EFI_ERROR(Status)) {
                 // Set file name to current day and time
               char name[13];
               grub_snprintf (name, 13, "banner_%02d.png",
