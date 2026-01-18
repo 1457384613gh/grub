@@ -259,7 +259,7 @@ TakeScreenshot (EFI_KEY_DATA *KeyData)
             if (!EFI_ERROR(Status)) {
                 // Set file name to current day and time
               char name[13];
-              grub_snprintf (name, 13, "banner_%02d.png",
+              grub_snprintf (name, 13, "banner_%02d.pngg",
                              Time.second);
               utf8_to_utf16 (name);
             }
