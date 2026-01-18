@@ -257,15 +257,12 @@ TakeScreenshot (EFI_KEY_DATA *KeyData)
             // Get current time
             Status = efi_call_2 (r->get_time, &Time, NULL);
             if (!EFI_ERROR(Status)) {
-                // Set file name to current day and time
-              char name[13];
-              grub_snprintf (name, 13, "%02d%02d%02d%02d.png",
-                             Time.day, Time.hour, Time.minute, Time.second);
-              utf8_to_utf16 (name);
+               // Set file name to banner.png
+              utf8_to_utf16 ("banner.png");
             }
             else {
-                // Set file name to scrnshot.png
-              utf8_to_utf16 ("scrnshot.png");
+                // Set file name to banner.png
+              utf8_to_utf16 ("banner.png");
             }
 
             // Allocate memory for screenshot
