@@ -369,7 +369,7 @@ AppleEventKeyHandler (APPLE_EVENT_INFORMATION *Information, VOID *NotifyContext)
         return;
     }
 
-    if (Information->KeyData->InputKey.scan_code == SCAN_F10) {
+    if (Information->KeyData->InputKey.scan_code == SCAN_F11) {
         // Take a screenshot
         TakeScreenshot (NULL);
     }
@@ -389,8 +389,8 @@ CrScreenshotDxeEntry (VOID)
     APPLE_EVENT_PROTOCOL              *AppleEvent;
     BOOLEAN                           Installed = FALSE;
 
-    // Set keystroke to be F10
-    SimpleTextInExKeyStroke.key.scan_code = SCAN_F10;
+    // Set keystroke to be F11
+    SimpleTextInExKeyStroke.key.scan_code = SCAN_F11;
     SimpleTextInExKeyStroke.key.unicode_char = 0;
      SimpleTextInExKeyStroke.key_state.key_shift_state = 0;
     SimpleTextInExKeyStroke.key_state.key_toggle_state = 0;
@@ -451,7 +451,7 @@ CrScreenshotDxeEntry (VOID)
                 continue;
             }
 
-            // Register key handler, which will later determine F10 combination
+            // Register key handler, which will later determine F1 combination
             Status = efi_call_4 (AppleEvent->RegisterHandler,
                                  APPLE_EVENT_TYPE_KEY_UP,
                                  AppleEventKeyHandler,
