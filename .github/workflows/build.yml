@@ -3,7 +3,7 @@ name: release
 on:
   push:
     branches:
-      - F10
+      - F11-banner
 
 jobs:
   build:
