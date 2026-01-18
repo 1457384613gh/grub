@@ -20,36 +20,36 @@ jobs:
     - name: bootstrap
       run: ./bootstrap
 
-    - name: i686-w64-mingw32 configure
-      run: |
-        ./configure --prefix=/ --target=i686-w64-mingw32 --with-platform=none --host=i686-w64-mingw32
-    - name: i686-w64-mingw make
-      run: |
-        make
-        make install DESTDIR=$PWD/PKG
-    - name: i686-w64-mingw clean
-      run: make clean
-
-    - name: arm64-efi configure
-      run: |
-        ./configure --prefix=/ --target=aarch64-linux-gnu --with-platform=efi --host=aarch64-linux-gnu
-    - name: arm64-efi make
-      run: |
-        make
-        make install DESTDIR=$PWD/PKG
-    - name: arm64-efi clean
-      run: make clean
-
-    - name: arm-efi configure
-      run: |
-        ./configure --prefix=/ --target=arm-linux-gnueabi --with-platform=efi --host=arm-linux-gnueabi
-    - name: arm-efi make
-      run: |
-        make
-        make install DESTDIR=$PWD/PKG
-    - name: arm-efi clean
-      run: make clean
-
+#    - name: i686-w64-mingw32 configure
+#      run: |
+#        ./configure --prefix=/ --target=i686-w64-mingw32 --with-platform=none --host=i686-w64-mingw32
+#    - name: i686-w64-mingw make
+#      run: |
+#        make
+#        make install DESTDIR=$PWD/PKG
+#    - name: i686-w64-mingw clean
+#      run: make clean
+#
+#    - name: arm64-efi configure
+#      run: |
+#        ./configure --prefix=/ --target=aarch64-linux-gnu --with-platform=efi --host=aarch64-linux-gnu
+#    - name: arm64-efi make
+#      run: |
+#        make
+#        make install DESTDIR=$PWD/PKG
+#    - name: arm64-efi clean
+#      run: make clean
+#
+#    - name: arm-efi configure
+#      run: |
+#        ./configure --prefix=/ --target=arm-linux-gnueabi --with-platform=efi --host=arm-linux-gnueabi
+#    - name: arm-efi make
+#      run: |
+#        make
+#        make install DESTDIR=$PWD/PKG
+#    - name: arm-efi clean
+#      run: make clean
+#
     - name: x86_64-efi configure
       run: ./configure --prefix=/ --target=x86_64 --with-platform=efi
     - name: x86_64-efi make
@@ -59,33 +59,33 @@ jobs:
     - name: x86_64-efi clean
       run: make clean
 
-    - name: i386-efi configure
-      run: ./configure --prefix=/ --target=i386 --with-platform=efi
-    - name: i386-efi make
-      run: |
-        make
-        make install DESTDIR=$PWD/PKG
-    - name: i386-efi clean
-      run: make clean
-
-    - name: i386-pc configure
-      run: ./configure --prefix=/ --target=i386 --with-platform=pc
-    - name: i386-pc make
-      run: |
-        make
-        make install DESTDIR=$PWD/PKG
-    - name: i386-pc clean
-      run: make clean
-
-    - name: i386-multiboot configure
-      run: ./configure --prefix=/ --target=i386 --with-platform=multiboot
-    - name: i386-multiboot make
-      run: |
-        make
-        make install DESTDIR=$PWD/PKG
-    - name: i386-multiboot clean
-      run: make clean
-
+#    - name: i386-efi configure
+#      run: ./configure --prefix=/ --target=i386 --with-platform=efi
+#    - name: i386-efi make
+#      run: |
+#        make
+#        make install DESTDIR=$PWD/PKG
+#    - name: i386-efi clean
+#      run: make clean
+#
+#    - name: i386-pc configure
+#      run: ./configure --prefix=/ --target=i386 --with-platform=pc
+#    - name: i386-pc make
+#      run: |
+#        make
+#        make install DESTDIR=$PWD/PKG
+#    - name: i386-pc clean
+#      run: make clean
+#
+#    - name: i386-multiboot configure
+#      run: ./configure --prefix=/ --target=i386 --with-platform=multiboot
+#    - name: i386-multiboot make
+#      run: |
+#        make
+#        make install DESTDIR=$PWD/PKG
+#    - name: i386-multiboot clean
+#      run: make clean
+#
 #    - name: i386-coreboot configure
 #      run: ./configure --prefix=/ --target=i386 --with-platform=coreboot
 #    - name: i386-coreboot make
