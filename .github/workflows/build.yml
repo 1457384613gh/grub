@@ -10,12 +10,12 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
     - name: checkout
-    - uses: actions/checkout@v4
+      uses: actions/checkout@v4
     - name: initialize
       run: |
         sudo apt-get -y update
-#        sudo -E apt-get -y install build-essential binutils python3 iasl lzop unifont autopoint bison flex gettext gcc-aarch64-linux-gnu gcc-arm-linux-gnueabi gcc-mingw-w64
-        sudo apt-get install build-essential gcc-aarch64-linux-gnu gcc-arm-linux-gnueabi binutils-aarch64-linux-gnu binutils-arm-linux-gnueabi autopoint flex bison gettext
+        sudo -E apt-get -y install build-essential binutils python3 iasl lzop unifont autopoint bison flex gettext gcc-aarch64-linux-gnu gcc-arm-linux-gnueabi gcc-mingw-w64
+        sudo apt-get install binutils-aarch64-linux-gnu binutils-arm-linux-gnueabi
 
 
         
