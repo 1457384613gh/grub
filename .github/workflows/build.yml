@@ -14,11 +14,8 @@ jobs:
     - name: initialize
       run: |
         sudo apt-get -y update
-        sudo -E apt-get -y install build-essential binutils python3 iasl lzop unifont autopoint bison flex gettext gcc-aarch64-linux-gnu gcc-arm-linux-gnueabi
-#        sudo apt-get install binutils-aarch64-linux-gnu binutils-arm-linux-gnueabi
+        sudo -E apt-get -y install build-essential python3 iasl lzop unifont autopoint bison flex gettext gcc-aarch64-linux-gnu
 
-
-        
     - name: bootstrap
       run: ./bootstrap
 
