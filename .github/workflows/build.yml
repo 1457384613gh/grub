@@ -14,9 +14,11 @@ jobs:
     - name: initialize
       run: |
         sudo apt-get -y update
-        sudo -E apt-get -y install build-essential binutils python3 iasl lzop unifont autopoint bison flex gettext gcc-aarch64-linux-gnu gcc-arm-linux-gnueabi gcc-mingw-w64
-        sudo apt-get install build-essential gcc-aarch64-linux-gnu gcc-arm-linux-gnueabi gcc-mingw-w64 g++-mingw-w64 binutils-aarch64-linux-gnu binutils-arm-linux-gnueabi mingw-w64 autopoint flex bison gettext
+#        sudo -E apt-get -y install build-essential binutils python3 iasl lzop unifont autopoint bison flex gettext gcc-aarch64-linux-gnu gcc-arm-linux-gnueabi gcc-mingw-w64
+        sudo apt-get install build-essential gcc-aarch64-linux-gnu gcc-arm-linux-gnueabi binutils-aarch64-linux-gnu binutils-arm-linux-gnueabi autopoint flex bison gettext
 
+
+        
     - name: bootstrap
       run: ./bootstrap
 
@@ -30,15 +32,15 @@ jobs:
 #    - name: i686-w64-mingw clean
 #      run: make clean
 #
-#    - name: arm64-efi configure
-#      run: |
-#        ./configure --prefix=/ --target=aarch64-linux-gnu --with-platform=efi --host=aarch64-linux-gnu
-#    - name: arm64-efi make
-#      run: |
-#        make
-#        make install DESTDIR=$PWD/PKG
-#    - name: arm64-efi clean
-#      run: make clean
+    - name: arm64-efi configure
+      run: |
+        ./configure --prefix=/ --target=aarch64-linux-gnu --with-platform=efi --host=aarch64-linux-gnu
+    - name: arm64-efi make
+      run: |
+        make
+        make install DESTDIR=$PWD/PKG
+    - name: arm64-efi clean
+      run: make clean
 #
 #    - name: arm-efi configure
 #      run: |
